@@ -54,10 +54,10 @@ fn f(x: i64) -> i64 {
 
 fn e(k: u32, x: i64, beta: f64) -> (f64, f64) {
     let beta_projection = |x: i64| {
-        let binary = format!("{:b}", x);
-        let len = binary.len();
-        let numerator = (0..len).fold(0_f64, |acc, i| {
-            acc + binary.as_bytes()[(len - i - 1) as usize] as f64 * beta.powf(i as f64)
+        let binary = format!("{:b}", x).chars().rev().collect::<String>();
+        let numerator = binary.chars().enumerate().fold(0_f64, |acc, (i, c)| {
+            let xi = c.to_digit(2).unwrap();
+            acc + xi as f64 * beta.powf(i as f64)
         });
         (numerator / beta.powf(k as f64)) % 1_f64
     };
