@@ -1,8 +1,11 @@
 use plotters::prelude::*;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let k = 20;
+
+    let name = format!("k_{}.png", k);
     // create graph picture and fill it by white color.
-    let root = BitMapBackend::new("graph.png", (1000, 1000)).into_drawing_area();
+    let root = BitMapBackend::new(&name, (1000, 1000)).into_drawing_area();
     root.fill(&WHITE)?;
     // create area for graph.
     let mut chart = ChartBuilder::on(&root)
@@ -14,7 +17,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     chart.configure_mesh().draw()?;
 
-    let k = 20;
     // LineSeries connects separate points, so graph becomes incorrect.
     // Solution is to use PointSeries with points as circles with size 1.
     chart
@@ -47,7 +49,7 @@ fn f(x: i64) -> i64 {
             & (15 + 16 * x)
             & (31 + 32 * x)
             & (63 + 64 * x)))
-        ^ (4 * (x * x + 8))
+        ^ (4 * (x * x + 27))
 }
 
 fn e(k: u32, x: i64) -> (f64, f64) {

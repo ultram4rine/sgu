@@ -18,7 +18,7 @@ fn main() {
     }
     println!("");
 
-    println!("5 * x + 16");
+    println!("77 * x - 7");
     if is_bijective(g) {
         println!("bijective")
     } else {
@@ -40,7 +40,7 @@ fn main() {
         & (15 + 16 * x)
         & (31 + 32 * x)
         & (63 + 64 * x)))
-    ^ (4 * (x * x + 8))"
+    ^ (4 * (x * x + 27))"
     );
     if is_transitive_modulo(f_256, 256) {
         println!("f(x) transitive with modulo 256")
