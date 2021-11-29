@@ -5,7 +5,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let beta = 2_f64.powf(1_f64 / n);
     let k = 20;
 
-    let name = format!("k_{}_n_{}.png", k, n);
+    let name = format!("graph_n_{}_k_{}.png", n, k);
     // create graph picture and fill it by white color.
     let root = BitMapBackend::new(&name, (1000, 1000)).into_drawing_area();
     root.fill(&WHITE)?;
@@ -40,6 +40,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+fn reduce(x: i64, k: u32) -> i64 {
+    x % 2_i64.pow(k as u32)
+}
+
 fn f(x: i64) -> i64 {
     // test function
     // x + 1
@@ -63,5 +67,5 @@ fn e(k: u32, x: i64, beta: f64) -> (f64, f64) {
         });
         (numerator / beta.powf(k as f64)) % 1_f64
     };
-    (beta_projection(x), beta_projection(f(x)))
+    (beta_projection(x), beta_projection(reduce(f(x), k)))
 }
