@@ -76,13 +76,7 @@ fn is_bijective_modulo(f: fn(i32) -> i32, modulo: i32) -> bool {
         }
     }
 
-    let cycles_everywhere = cycles_from.iter().fold(true, |res, x| res && *x);
-
-    if cycles_everywhere {
-        true
-    } else {
-        false
-    }
+    cycles_from.iter().fold(true, |res, x| res && *x)
 }
 
 fn is_transitive_modulo(f: fn(i32) -> i32, modulo: i32) -> bool {
@@ -92,14 +86,9 @@ fn is_transitive_modulo(f: fn(i32) -> i32, modulo: i32) -> bool {
 
     // If after DFS all nodes painted to black, then graph is cycle itself.
     if find_cycle(0, adj.clone(), &mut colors) {
-        let circular = colors
+        colors
             .iter()
-            .fold(true, |res, x| res && (*x == "black".to_owned()));
-        if circular {
-            true
-        } else {
-            false
-        }
+            .fold(true, |res, x| res && (*x == "black".to_owned()))
     } else {
         false
     }
