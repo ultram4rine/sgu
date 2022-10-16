@@ -1,0 +1,20 @@
+.feedback {
+    padding: 60px 0;
+
+    &__container {
+        padding: 78px 0 78px;
+        background-color: #292C36;
+        border-radius: 12px;
+        width: 68%;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 32px;
+    }
+
+    &__wrapper {
+        text-align: center;
+        margin-top: 32px;
+    }
+}

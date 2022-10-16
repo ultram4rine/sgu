@@ -1,0 +1,61 @@
+.specializing {
+    padding: 62.5px 0 60px;
+
+    &__subtitle,
+    &__title {
+        text-align: center;
+    }
+
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    &-item {
+        padding: 25px;
+        background-color: #292C36;
+        border-radius: 12px;
+
+        &__head {
+            display: flex;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        &__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 66px;
+            height: 66px;
+            background-color: #38405A;
+            border-radius: 8px;
+            margin-right: 16px;
+
+            &>img {
+                width: 42px;
+            }
+        }
+
+        &__title {
+            font-weight: 600;
+            font-size: 24px;
+            color: #FFFFFF;
+            margin: 0;
+        }
+
+        &__desc {
+            font-weight: 400;
+            font-size: 18px;
+            color: #B0ADAD;
+            margin: 0;
+        }
+    }
+}

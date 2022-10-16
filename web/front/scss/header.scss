@@ -1,0 +1,44 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 18px;
+    width: 100%;
+    z-index: 2;
+
+    &__container {
+        max-width: 1250px;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: flex;
+        width: 105px;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+
+    &__link {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.5;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        transition: 0.3s transform;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+}

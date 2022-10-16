@@ -1,0 +1,125 @@
+@import "_mixins";
+@import "fonts";
+
+*,
+*::before,
+*::after {
+    font-family: Poppins;
+    line-height: 1.5;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    position: relative;
+    z-index: 2;
+    background-color: #212121;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.subtitle {
+    display: block;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    color: #4C70EF;
+    margin: 0 0 12px;
+}
+
+.h2-title {
+    font-weight: 600;
+    font-size: 36px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background-color: #558FFF;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s background;
+
+    &:hover {
+        background-color: #256FFF;
+    }
+}
+
+.container {
+    max-width: 1210px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        transition: 0.3s transform;
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+
+        &--facebook {
+            &>img {
+                width: 9.4px;
+            }
+        }
+
+        &--instagram {
+            &>img {
+                width: 22px;
+            }
+        }
+
+        &--github {
+            &>img {
+                width: 24px;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}
+
+[data-mask] {
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    transition: 0.3s background;
+}

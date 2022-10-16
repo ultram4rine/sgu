@@ -1,0 +1,28 @@
+.footer {
+    position: relative;
+    padding: 60px 0 0;
+    background-color: #212121;
+    z-index: 3;
+
+    &__container {
+        padding: 0 0 32px 0;
+        margin: 0;
+        background-color: #292C36;
+        max-width: 100%;
+        color: #FFFFFF;
+    }
+
+    &__logo {
+        font-weight: 700;
+        font-size: 32px;
+        padding-top: 44px;
+        text-align: center;
+    }
+
+    &__copyright {
+        font-weight: 700;
+        font-size: 16px;
+        margin-top: 8px;
+        text-align: center;
+    }
+}

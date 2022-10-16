@@ -1,0 +1,29 @@
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+
+$container-lg: 1175px;
+$container-md: 720px;
+$container-sm: 540px;
+
+$p: 15px;
+
+@mixin container {
+    width: 100%;
+    max-width: $container-lg;
+    padding-left: $p;
+    padding-right: $p;
+    margin: 0 auto;    
+
+    @media screen and (max-width: $breakpoint-lg) {
+        max-width: $container-md;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        max-width: $container-sm;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        max-width: 100%;
+    }
+}
