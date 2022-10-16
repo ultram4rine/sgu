@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__row">
+                <a href="" class="header__logo"><img src="./images/logo.svg" alt=""></a>
+                <nav class="header__nav nav">
+                    <a href="" class="nav__link">ABOUT</a>
+                    <a href="" class="nav__link">WHAT I DO</a>
+                    <a href="" class="nav__link">WORK</a>
+                    <a href="" class="nav__link">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner">
+            <video autoplay loop muted src="./files/background-video.mp4" class="banner__video"></video>
+            <div class="container banner__container">
+                <div class="banner__column">
+                    <h1 class="banner__title">I'm Raul iqbal</h1>
+                    <p class="banner__desc">Front-End Development - UI/UX Designer</p>
+                    <div class="banner__social social">
+                        <a href="" class="social__item social__item--facebook">
+                            <img src="./images/facebook-f.svg" alt="">
+                        </a>
+                        <a href="" class="social__item social__item--instagram">
+                            <img src="./images/instagram.svg" alt="">
+                        </a>
+                        <a href="" class="social__item social__item--github">
+                            <img src="./images/github.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container about__container">
+                <div class="about__row">
+                    <div class="about__column">
+                        <img src="./images/about.jpg" alt="" class="about__img">
+                    </div>
+                    <div class="about__column">
+                        <p class="about__subtitle subtitle">ABOUT ME</p>
+                        <h2 class="about__title h2-title">I'm Raul iqbal</h2>
+                        <div class="about__desc">
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
+                                the Semantics, a large language ocean.</p>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
+                                the Semantics, a large language ocean.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="specializing">
+            <div class="container specializing__container">
+                <p class="specializing__subtitle subtitle">WHAT I DO</p>
+                <h2 class="specializing__title h2-title">SPECIALIZING IN</h2>
+                <div class="specializing__row">
+                    <div class="specializing__item specializing-item">
+                        <div class="specializing-item__head">
+                            <div class="specializing-item__icon">
+                                <img src="./images/specializing-1.svg" alt="">
+                            </div>
+                            <h3 class="specializing-item__title">Front-end<br>Development</h3>
+                        </div>
+                        <p class="specializing-item__desc">Lom ipsum dolo, sit amet consectetu adpisicing elit, rem
+                            voluptas sed blanditiis</p>
+                    </div>
+                    <div class="specializing__item specializing-item">
+                        <div class="specializing-item__head">
+                            <div class="specializing-item__icon">
+                                <img src="./images/specializing-2.svg" alt="">
+                            </div>
+                            <h3 class="specializing-item__title">UI/UX<br>Designer</h3>
+                        </div>
+                        <p class="specializing-item__desc">Lom ipsum dolo, sit amet consectetu adpisicing elit, rem
+                            voluptas sed blanditiis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio">
+            <div class="container portfolio__container">
+                <p class="portfolio__subtitle subtitle">PORTFOLIO</p>
+                <h2 class="portfolio__title h2-title">LATEST PROJECTS</h2>
+                <div class="portfolio__slider swiper">
+                    <div class="portfolio__wrapper swiper-wrapper">
+                        <div class="portfolio__item portfolio-item swiper-slide">
+                            <div class="portfolio-item__img">
+                                <img src="./images/portfolio-1.png" alt="">
+                            </div>
+                            <div class="portfolio-item__bottom">
+                                <h4 class="portfolio-item__title">Need Food App Design</h4>
+                                <a href="" class="portfolio__btn btn">View Demo</a>
+                            </div>
+                        </div>
+
+                        <div class="portfolio__item portfolio-item swiper-slide">
+                            <div class="portfolio-item__img">
+                                <img src="./images/portfolio-2.png" alt="">
+                            </div>
+                            <div class="portfolio-item__bottom">
+                                <h4 class="portfolio-item__title">Cafe Street Web Design</h4>
+                                <a href="" class="portfolio__btn btn">View Demo</a>
+                            </div>
+                        </div>
+
+                        <div class="portfolio__item portfolio-item swiper-slide">
+                            <div class="portfolio-item__img">
+                                <img src="./images/portfolio-3.png" alt="">
+                            </div>
+                            <div class="portfolio-item__bottom">
+                                <h4 class="portfolio-item__title">Travel App Design</h4>
+                                <a href="" class="portfolio__btn btn">View Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feedback">
+            <div class="container feedback__container">
+                <h2 class="feedback__title h2-title">Have any projects in mind ?</h2>
+                <div class="feedback__wrapper">
+                    <a href="" class="feedback__btn btn">Contact me</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__logo">LOGO</div>
+            <div class="footer__copyright">COPYRIGHT © 2018 CV RAULIQBAL.</div>
+        </div>
+    </footer>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <script defer src="./js/app.js"></script>
+</body>
+
+</html>
