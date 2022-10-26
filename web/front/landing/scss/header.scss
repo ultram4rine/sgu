@@ -1,0 +1,29 @@
+.header {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 100%;
+    z-index: 2;
+
+    &__container {
+        max-width: 1250px;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: flex;
+        width: 32px;
+    }
+
+    &__docs {
+        margin-right: 48px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #C5D2DC;
+    }
+}

@@ -1,0 +1,28 @@
+.video {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__container {
+        margin-top: 32px;
+    }
+
+    &__column {
+        position: relative;
+        max-width: 1024px;
+
+        &__video {
+            z-index: 2;
+            position: relative;
+        }
+
+        &__waves {
+            z-index: 1;
+            position: absolute;
+            left: -125px;
+            bottom: -64px;
+            width: 563px;
+            height: 552px;
+        }
+    }
+}

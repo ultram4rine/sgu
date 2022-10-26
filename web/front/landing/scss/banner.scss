@@ -1,0 +1,46 @@
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+
+    &__container {
+        margin-top: calc(20px + 40px + 100px); // top margin + height of header + 100px.
+        margin-bottom: 32px;
+    }
+
+    &__column {
+        max-width: 768px;
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: 52px;
+        line-height: 1.5;
+        color: #D9E3EA;
+        text-align: center;
+        margin: 0 0 16px;
+    }
+
+    &__subtitle {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.5;
+        color: #9BA9B4;
+        text-align: center;
+        margin: 0 32px 32px;
+    }
+
+    &__buttons {
+        text-align: center;
+
+        :not(:nth-last-child(1)) {
+            margin-right: 12px;
+        }
+    }
+
+
+    &__btn {
+        padding: 12px 32px;
+    }
+}
