@@ -12,35 +12,62 @@ import (
 	"strconv"
 
 	"github.com/diskfs/go-diskfs/partition"
-	"github.com/diskfs/go-diskfs/partition/gpt"
 	"golang.org/x/sys/windows"
 )
 
 var CNT = 1
 
-func getEntryOffset(f *pe.File, name string) (offset uint64, err error) {
-	for _, s := range f.Symbols {
-		if s.Name == name {
-			sect := f.Sections[s.SectionNumber-1]
-			return uint64(sect.Offset + s.Value), nil
+func main() {
+	dev, err := determineDevice()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if CNT == 1 {
+		if err := markDevice(dev); err != nil {
+			log.Fatal(err)
 		}
+		fmt.Println("first run")
+	} else if CNT == 2 {
+		ok, err := checkDevice(dev)
+		if err != nil {
+			log.Fatal(err)
+		}
+		if !ok {
+			log.Fatal("wrong device")
+		}
+		fmt.Println("second run")
 	}
-	return 0, fmt.Errorf("can't find symbol '%s'", name)
-}
 
-func patchPE(peName string, offset uint64) ([]byte, error) {
-	f, err := os.Open(peName)
+	var exeName = os.Args[0]
+
+	self, err := pe.Open(exeName)
 	if err != nil {
-		return nil, err
+		log.Fatal(err)
 	}
-	data, err := io.ReadAll(f)
+
+	offset, err := getEntryOffset(self, "main.CNT")
 	if err != nil {
-		return nil, err
+		log.Fatalf("can't find counter object in ELF file: %v", err)
 	}
 
-	binary.LittleEndian.PutUint64(data[offset:], 2)
+	patchedData, err := patchPE(exeName, offset)
+	if err != nil {
+		log.Fatalf("can't patch PE file: %v", err)
+	}
 
-	return data, nil
+	tmpExeName := exeName + ".tmp"
+	newSelf, err := os.Create(tmpExeName)
+	if err != nil {
+		log.Fatalf("can't create temporary file: %v", err)
+	}
+
+	if _, err := newSelf.Write(patchedData); err != nil {
+		log.Fatalf("can't write patched PE: %v", err)
+	}
+
+	cmd := exec.Command("cmd.exe", "/C", fmt.Sprintf("start cmd /C move /y %s %s && exit", tmpExeName, exeName))
+	log.Println(cmd.Start())
 }
 
 func determineDevice() (string, error) {
@@ -85,69 +112,91 @@ func determineDevice() (string, error) {
 	return drive, nil
 }
 
-func main() {
-	dev, err := determineDevice()
+func checkDevice(dev string) (bool, error) {
+	f, err := os.OpenFile(dev, os.O_RDWR, 0600)
 	if err != nil {
-		log.Fatal(err)
+		return false, fmt.Errorf("can't open %s: %v", dev, err)
 	}
-
-	f, err := os.Open(dev /* , os.O_WRONLY|os.O_APPEND, 0 */)
-	if err != nil {
-		log.Fatalf("can't open %s: %v", dev, err)
-	}
+	defer f.Close()
 
 	tbl, err := partition.Read(f, 512, 512)
 	if err != nil {
-		log.Fatal(err)
+		return false, err
 	}
-	log.Println(tbl.(*gpt.Table).GUID)
 
 	parts := tbl.GetPartitions()
+	part := parts[len(parts)-1]
 	buf := new(bytes.Buffer)
-	_, err = parts[len(parts)-1].ReadContents(f, buf)
-	if err != nil {
-		log.Fatal(err)
+
+	if _, err = part.ReadContents(f, buf); err != nil {
+		return false, err
 	}
-	log.Println(buf.Bytes())
+
 	bt := buf.Bytes()
-	bt[0] = 1
+	if bt[len(bt)-1] == 4 && bt[len(bt)-2] == 3 && bt[len(bt)-3] == 2 && bt[len(bt)-4] == 1 {
+		return true, nil
+	} else {
+		return false, nil
+	}
+}
+
+func markDevice(dev string) error {
+	f, err := os.OpenFile(dev, os.O_RDWR, 0600)
+	if err != nil {
+		return fmt.Errorf("can't open %s: %v", dev, err)
+	}
+	defer f.Close()
+
+	tbl, err := partition.Read(f, 512, 512)
+	if err != nil {
+		return err
+	}
+
+	parts := tbl.GetPartitions()
+	part := parts[len(parts)-1]
+	buf := new(bytes.Buffer)
+
+	if _, err = part.ReadContents(f, buf); err != nil {
+		return err
+	}
+
+	bt := buf.Bytes()
+	// Let's set last 4 bytes to 1 2 3 4.
+	bt[len(bt)-1] = 4
+	bt[len(bt)-2] = 3
+	bt[len(bt)-3] = 2
+	bt[len(bt)-4] = 1
 	buf.Truncate(0)
 	buf.Write(bt)
-	log.Println(buf.Bytes())
 
-	if CNT == 1 {
-		fmt.Println("first run")
-	} else if CNT == 2 {
-		fmt.Println("second run")
+	if _, err := part.WriteContents(f, buf); err != nil {
+		return err
 	}
 
-	var exeName = os.Args[0]
+	return nil
+}
 
-	self, err := pe.Open(exeName)
+func getEntryOffset(f *pe.File, name string) (offset uint64, err error) {
+	for _, s := range f.Symbols {
+		if s.Name == name {
+			sect := f.Sections[s.SectionNumber-1]
+			return uint64(sect.Offset + s.Value), nil
+		}
+	}
+	return 0, fmt.Errorf("can't find symbol '%s'", name)
+}
+
+func patchPE(peName string, offset uint64) ([]byte, error) {
+	f, err := os.Open(peName)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
-
-	offset, err := getEntryOffset(self, "main.CNT")
+	data, err := io.ReadAll(f)
 	if err != nil {
-		log.Fatalf("can't find counter object in ELF file: %v", err)
+		return nil, err
 	}
 
-	patchedData, err := patchPE(exeName, offset)
-	if err != nil {
-		log.Fatalf("can't patch PE file: %v", err)
-	}
+	binary.LittleEndian.PutUint64(data[offset:], 2)
 
-	tmpExeName := exeName + ".tmp"
-	newSelf, err := os.Create(tmpExeName)
-	if err != nil {
-		log.Fatalf("can't create temporary file: %v", err)
-	}
-
-	if _, err := newSelf.Write(patchedData); err != nil {
-		log.Fatalf("can't write patched PE: %v", err)
-	}
-
-	cmd := exec.Command("cmd.exe", "/C", fmt.Sprintf("start cmd /C move /y %s %s && exit", tmpExeName, exeName))
-	log.Println(cmd.Start())
+	return data, nil
 }
