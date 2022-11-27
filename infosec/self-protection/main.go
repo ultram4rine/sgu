@@ -31,8 +31,7 @@ func main() {
 		}
 
 		var exeName = os.Args[0]
-		patchedData, err := patchPE(exeName)
-		if err != nil {
+		if err := patchPE(exeName); err != nil {
 			log.Fatalf("can't patch PE file: %v", err)
 		}
 	} else if CNT == 2 {
@@ -201,4 +200,6 @@ func patchPE(peName string) error {
 	if err := cmd.Start(); err != nil {
 		return fmt.Errorf("failed to move binary: %v", err)
 	}
+
+	return nil
 }
