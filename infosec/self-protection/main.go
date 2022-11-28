@@ -15,6 +15,8 @@ import (
 	"golang.org/x/sys/windows"
 )
 
+// Program must be run with administrator privileges, since it read physical device and writes to it.
+
 var CNT = 1
 
 func main() {
@@ -26,10 +28,12 @@ func main() {
 	if CNT == 1 {
 		fmt.Println("first run")
 
+		fmt.Println("marking device")
 		if err := markDevice(dev); err != nil {
 			log.Fatal(err)
 		}
 
+		fmt.Println("patching PE")
 		var exeName = os.Args[0]
 		if err := patchPE(exeName); err != nil {
 			log.Fatalf("can't patch PE file: %v", err)
@@ -40,10 +44,15 @@ func main() {
 			log.Fatal("failed to check device: %v", err)
 		}
 		if !ok {
+			// If it's second run and device is not marked, print "wrong device" and exit.
 			log.Fatal("wrong device")
+		} else {
+			// Else if it's second run and device marked, print "second run", "do nothing" and exit.
+			fmt.Println("second run")
+			fmt.Println("do nothing")
 		}
-		fmt.Println("second run")
 	} else {
+		// This block should be unreachable since after PE patch, CNT become 2.
 		fmt.Println("unreachable block")
 	}
 }
