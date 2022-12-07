@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RusWay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container">
+            <img src="./images/background-header.png" alt="">
+            <div class="header__row">
+                <div class="header__row_button btn">
+                    <img src="./images/icon-menu.svg" alt="">
+                </div>
+                <div class="header__row_logo">
+                    <img src="./images/logo-rusway-header.svg" alt="">
+                </div>
+                <div class="header__row_location">
+                    <div class="header__row_location_icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="header__row_location_text">Moscow</i></div>
+                </div>
+                <div class="header__row_divider"></div>
+                <div class="header__row_text">Calculator</div>
+                <div class="header__row_text">Leave entry</div>
+                <div class="header__row_text">Contacts</div>
+                <div class="header__row_divider"></div>
+                <div class="header__row_phone">+7 (499) 685-16-80</div>
+            </div>
+            <div class="header__content">
+                <div class="header__content_title">You can be sure your cargo will arrive on time</div>
+                <div class="header__content_subtitle">RusWay acts as a guarantor of reliability and professionalism!
+                </div>
+                <div class="header__content_button btn">Order a call</div>
+            </div>
+            <div class="header__calc">
+                <form>
+                    <div>
+                        <label for="from">From?</label>
+                        <i class="fa-solid fa-location-dot input-icon" style="color: #005CCE;"></i>
+                        <input type="text" placeholder="Moscow" name="from" autocomplete="off" />
+                    </div>
+                    <div>
+                        <label for="to">To?</label>
+                        <i class="fa-solid fa-location-dot input-icon" style="color: #DB2F09;"></i>
+                        <input type="text" placeholder="Saratov" name="to" autocomplete="off" />
+                    </div>
+                    <div>
+                        <label for="weight">Weight</label>
+                        <div style="display: flex;">
+                            <i class="fa-solid fa-weight-hanging input-icon" style="color: #B0B0B0;"></i>
+                            <p class="header__calc_measure">kg</p>
+                        </div>
+                        <input type="text" placeholder="0" name="weight" autocomplete="off" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="transportation">
+            <div class="transportation__container">
+                <div class="transportation__content">
+                    <div class="transportation__content_title">Types of transportation</div>
+                    <div class="transportation__row">
+                        <div class="transportation__card">
+                            <div class="transportation__card_title">Road transport</div>
+                            <div class="transportation__card_icon">
+                                <img src="./images/transportation-1.svg" class="transportation__card_icon_svg" alt="">
+                            </div>
+                        </div>
+                        <div class="transportation__card">
+                            <div class="transportation__card_title">Oversized transportation</div>
+                            <div class="transportation__card_icon">
+                                <img src="./images/transportation-2.svg" class="transportation__card_icon_svg" alt="">
+                            </div>
+                        </div>
+                        <div class="transportation__card">
+                            <div class="transportation__card_title">Delivery
+                                to hard-to-reach places</div>
+                            <div class="transportation__card_icon">
+                                <img src="./images/transportation-3.svg" class="transportation__card_icon_svg" alt="">
+                            </div>
+                        </div>
+                        <div class="transportation__card">
+                            <div class="transportation__card_title">Railway transportation</div>
+                            <div class="transportation__card_icon">
+                                <img src="./images/transportation-4.svg" class="transportation__card_icon_svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="numbers">
+            <div class="numbers__container">
+                <img src="./images/background-about-us.png" alt="">
+                <div class="numbers__content">
+                    <div class="numbers__content_title">About us as numbers</div>
+                    <div class="numbers__row">
+                        <div class="numbers__item">
+                            <div class="numbers__item_title">6</div>
+                            <div class="numbers__item_text">years in the transport services market</div>
+                        </div>
+                        <div class="numbers__item">
+                            <div class="numbers__item_title">83M+</div>
+                            <div class="numbers__item_text">km overcame
+                                our transport, delivering your goods</div>
+                        </div>
+                        <div class="numbers__item">
+                            <div class="numbers__item_title">540</div>
+                            <div class="numbers__item_text">we deliver cargo per month to the recipient</div>
+                        </div>
+                        <div class="numbers__item">
+                            <div class="numbers__item_title">5</div>
+                            <div class="numbers__item_text">specialists control the quality of delivery of your cargo
+                                "just in time"</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages">
+            <div class="advantages__container">
+                <div class="advantages__content">
+                    <div class="advantages__content_title">Our advantages</div>
+                    <div class="advantages__row">
+                        <div class="advantages__item">
+                            <div class="advantages__item_icon">
+                                <img src="./images/advantage-1.svg" class="advantages__item_icon_svg" alt="">
+                            </div>
+                            <div class="advantages__item_text">Absolutely all cargo is insured against all risks</div>
+                        </div>
+                        <div class="advantages__item">
+                            <div class="advantages__item_icon">
+                                <img src="./images/advantage-2.svg" class="advantages__item_icon_svg" alt="">
+                            </div>
+                            <div class="advantages__item_text">Accelerated document flow, we will definitely take into
+                                account your wishes</div>
+                        </div>
+                        <div class="advantages__item">
+                            <div class="advantages__item_icon">
+                                <img src="./images/advantage-3.svg" class="advantages__item_icon_svg" alt="">
+                            </div>
+                            <div class="advantages__item_text">Your personal manager is in touch 24/7</div>
+                        </div>
+                        <div class="advantages__item">
+                            <div class="advantages__item_icon">
+                                <img src="./images/advantage-4.svg" class="advantages__item_icon_svg" alt="">
+                            </div>
+                            <div class="advantages__item_text">Universal solutions for logistics tasks of any complexity
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="industries">
+            <div class="industries__container">
+                <div class="industries__grid">
+                    <div class="industries__item">
+                        <div class="industries__item_name">Industries</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-1.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-1.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Engineering</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-2.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-2.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Construction industry</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-3.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-3.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Oid and Gas industry</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-4.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-4.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Scientific and Production sphere</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-5.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-5.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Information technology and Communication</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-6.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-6.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Marketing and Advertising</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-7.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-7.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Energy</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-8.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-8.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Culture and Art</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-9.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-9.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Distribution and Trade</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-10.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-10.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Customs and Logistics</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-11.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-11.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Mechanical engineering</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-12.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-12.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Metallurgical industry</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-13.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-13.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Food industry</div>
+                    </div>
+                    <div class="industries__item">
+                        <div class="industries__item_image">
+                            <img src="./images/industries-14.png" alt="">
+                        </div>
+                        <div class="industries__item_icon">
+                            <img src="./images/industries-14.svg" class="industries__item_icon_svg" alt="">
+                        </div>
+                        <div class="industries__item_name">Light industry and TNP</div>
+                    </div>
+                    <div class="industries__item"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news">
+            <div class="news__container">
+                <div class="news__content">
+                    <div class="news__content_title">News</div>
+                    <div class="news__row">
+                        <div class="news__card">
+                            <div class="news__card_title">Lorem ipsum</div>
+                            <div class="news__card_subtitle">01. 10. 2021</div>
+                            <div class="news__card_image">
+                                <img src="./images/news-1.png" alt="">
+                            </div>
+                            <div class="news__card_body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                            <div class="news__card_actions">
+                                <a href="#">
+                                    <div class="news__card_button btn btn-outline">Read</div>
+                                </a>
+                                <a href="#">
+                                    <div class="news__card_share_wrapper">
+                                        <div class="news__card_share">Share</div>
+                                        <div class="news__card_share_icon">
+                                            <i class="fa-solid fa-share-nodes"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news__card">
+                            <div class="news__card_title">Lorem ipsum</div>
+                            <div class="news__card_subtitle">01. 10. 2021</div>
+                            <div class="news__card_image">
+                                <img src="./images/news-2.png" alt="">
+                            </div>
+                            <div class="news__card_body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                            <div class="news__card_actions">
+                                <a href="#">
+                                    <div class="news__card_button btn btn-outline">Read</div>
+                                </a>
+                                <a href="#">
+                                    <div class="news__card_share_wrapper">
+                                        <div class="news__card_share">Share</div>
+                                        <div class="news__card_share_icon">
+                                            <i class="fa-solid fa-share-nodes"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news__card">
+                            <div class="news__card_title">Lorem ipsum</div>
+                            <div class="news__card_subtitle">01. 10. 2021</div>
+                            <div class="news__card_image">
+                                <img src="./images/news-3.png" alt="">
+                            </div>
+                            <div class="news__card_body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                            <div class="news__card_actions">
+                                <a href="#">
+                                    <div class="news__card_button btn btn-outline">Read</div>
+                                </a>
+                                <a href="#">
+                                    <div class="news__card_share_wrapper">
+                                        <div class="news__card_share">Share</div>
+                                        <div class="news__card_share_icon">
+                                            <i class="fa-solid fa-share-nodes"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news__content_button_wrapper">
+                        <a href="#">
+                            <div class="news__content_button btn">View all News</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="questions">
+            <div class="questions__container">
+                <img src="./images/background-questions.png" alt="">
+                <div class="questions__content">
+                    <div class="questions__content_title">Got Questions?</div>
+                    <div class="questions__row">
+                        <div class="questions__item">
+                            <div class="questions__item_text">Contact us</div>
+                            <div class="questions__item_contact">
+                                <div class="questions__item_contact_icon">
+                                    <i class="icon fa-solid fa-phone"></i>
+                                </div>
+                                <div class="questions__item_contact_text">+7 (499) 685-16-80</div>
+                            </div>
+                            <div class="questions__item_contact">
+                                <div class="questions__item_contact_icon">
+                                    <i class="icon fa-regular fa-envelope"></i>
+                                </div>
+                                <div class="questions__item_contact_text">fizeisoumoi-6343@yopmail.com</div>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item_text">Or fill out the form and we will call you back</div>
+                            <form onsubmit="return false" class="questions__item_form">
+                                <input type="text" class="questions__item_form_name" placeholder="Name" />
+                                <input type="tel" class="questions__item_form_phone" placeholder="Phone" />
+                                <button type="submit" class="questions__item_form_button btn">Leave a
+                                    request</button>
+                                <div class="questions__item_form_agreement">By clicking on the button, you consent
+                                    to the processing of personal data and agree to the privacy policy.</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class=" reviews">
+            <div class="reviews__container">
+                <div class="reviews__content">
+                    <div class="reviews__content_title">Reviews</div>
+                    <div class="reviews__row swiper">
+                        <div class="reviews__row_wrapper swiper-wrapper">
+                            <div class="reviews__card swiper-slide">
+                                <div class="reviews__card_title">
+                                    <div class="reviews__card_avatar">
+                                        <img src="./images/logo-person.png" style="width: 50px; height: 50px;" alt="">
+                                    </div>
+                                    <div class="reviews__card_title_text">
+                                        <div class="reviews__card_author">Ksenia Ivanova</div>
+                                        <div class="reviews__card_company"></div>
+                                    </div>
+                                </div>
+                                <div class="reviews__card_body">
+                                    I want to thank Rusal for its excellent work. We accepted
+                                    the cargo, everything is
+                                    packed efficiently and promptly in stretch film, without
+                                    damage, thank you.
+                                </div>
+                                <div class="reviews__card_info">
+                                    <div class="reviews__card_icon">
+                                        <img src="./images/track-route.svg" alt="">
+                                    </div>
+                                    <div class="reviews__card_rw_wrapper">
+                                        <div class="reviews__card_route">Moscow - Saint
+                                            Petersburg: 705 km.</div>
+                                        <div class="reviews__card_weight">Weight: 349 kg.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__card swiper-slide">
+                                <div class="reviews__card_title">
+                                    <div class="reviews__card_avatar">
+                                        <img src="./images/logo-company.png" style="width: 64px; height: 27px;" alt="">
+                                    </div>
+                                    <div class="reviews__card_title_text">
+                                        <div class="reviews__card_author">Ksenia Ivanova</div>
+                                        <div class="reviews__card_company">LLC "Company"</div>
+                                    </div>
+                                </div>
+                                <div class="reviews__card_body">
+                                    Firstly, I had a need for cargo transportation to Sochi, but
+                                    since I had a friend
+                                    there
+                                    who had proven himself in cargo transportation from the best
+                                    side, he recommended
+                                    this
+                                    company to me. In general, I called them and discussed all
+                                    the details.
+                                </div>
+                                <div class="reviews__card_info">
+                                    <div class="reviews__card_icon">
+                                        <img src="./images/track-route.svg" alt="">
+                                    </div>
+                                    <div class="reviews__card_rw_wrapper">
+                                        <div class="reviews__card_route">Moscow - Sochi: 1,623
+                                            km.</div>
+                                        <div class="reviews__card_weight">Weight: 542 kg.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__card swiper-slide">
+                                <div class="reviews__card_title">
+                                    <div class="reviews__card_avatar">
+                                        <img src="./images/logo-ozon.png" style="width: 62px; height: 34px;" alt="">
+                                    </div>
+                                    <div class="reviews__card_title_text">
+                                        <div class="reviews__card_author">Ksenia Ivanova</div>
+                                        <div class="reviews__card_company">LLC "Company"</div>
+                                    </div>
+                                </div>
+                                <div class="reviews__card_body">
+                                    The transportation took place without delay, the driver
+                                    Alexey is a very good
+                                    specialist
+                                    in his field, experienced, accurate, punctual and
+                                    responsible, the car was without
+                                    any
+                                    problems, everything was packed and ready for shipment on
+                                    the road and back.
+                                </div>
+                                <div class="reviews__card_info">
+                                    <div class="reviews__card_icon">
+                                        <img src="./images/track-route.svg" alt="">
+                                    </div>
+                                    <div class="reviews__card_rw_wrapper">
+                                        <div class="reviews__card_route">Moscow - Sochi: 1,623
+                                            km.</div>
+                                        <div class="reviews__card_weight">Weight: 754 kg.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__content_arrows_wrapper">
+                            <div class="reviews__content_arrow arrow-left">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </div>
+                            <div class="reviews__content_arrow arrow-right">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div class="reviews__content_buttons_wrapper">
+                            <a href="#">
+                                <div class="reviews__content_button btn">All reviews</div>
+                            </a>
+                            <a href="#">
+                                <div class="reviews__content_button btn btn-outline">Leave a
+                                    review</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map">
+            <div class="map__container">
+                <img src="./images/map.png" alt="">
+                <div class="map__card">
+                    <div class="map__card_title">Contacts</div>
+                    <p class="map__card_contact"><i class="icon fa-solid fa-phone"></i>+7 (499) 685-16-80</p>
+                    <p class="map__card_contact"><i class="icon fa-regular fa-envelope"></i>fizeisoumoi-6343@yopmail.com
+                    </p>
+                    <p class="map__card_item"><i class="icon fa-solid fa-location-dot"></i>613710, Moscow, 3 Putinkovsky
+                        str. M. lane, </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__cols_grid">
+                <div class="footer__col">
+                    <div class="footer__logo">
+                        <img src="./images/logo-rusway-footer.svg" alt="">
+                    </div>
+                    <p class="footer__col_title col_first">Contacts</p>
+                    <p class="footer__col_contact">+7 (499) 685-16-80</p>
+                    <p class="footer__col_contact">fizeisoumoi-6343@yopmail.com</p>
+                    <p class="footer__col_item">613710, Moscow, 3 Putinkovsky str. M. lane, </p>
+                </div>
+                <div class="footer__col">
+                    <p class="footer__col_title">Company</p>
+                    <p class="footer__col_item"><a href="#">About us</a></p>
+                    <p class="footer__col_item"><a href="#">Types of transportation</a></p>
+                    <p class="footer__col_item"><a href="#">Industries</a></p>
+                    <p class="footer__col_item"><a href="#">Our advantages</a></p>
+                    <p class="footer__col_item"><a href="#">reviews</a></p>
+                    <p class="footer__col_item"><a href="#">Got questions?</a></p>
+                    <p class="footer__col_item"><a href="#">Contacts</a></p>
+                    <p class="footer__col_item"><a href="#">Reviews</a></p>
+                </div>
+                <div class="footer__col">
+                    <p class="footer__col_title">Services</h3>
+                    <p class="footer__col_item"><a href="#">Individual cars</a></p>
+                    <p class="footer__col_item"><a href="#">Combined cargo</a></p>
+                    <p class="footer__col_item"><a href="#">Oversized transportation</a></p>
+                    <p class="footer__col_item"><a href="#">Urgent transportation</a></p>
+                    <p class="footer__col_item"><a href="#">Container transportation</a></p>
+                    <p class="footer__col_item"><a href="#">Cargo insurance</a></p>
+                </div>
+                <div class="footer__col">
+                    <p class="footer__col_title">Directions</p>
+                    <p class="footer__col_item"><a href="#">Across Russia</a></p>
+                    <p class="footer__col_item"><a href="#">Across Belarus</a></p>
+                    <p class="footer__col_item"><a href="#">Across Kazakhstan</a></p>
+                    <p class="footer__col_item"><a href="#">Across Abkhazia</a></p>
+                    <p class="footer__col_item"><a href="#">Across Kyrgyzstan</a></p>
+                    <p class="footer__col_item"><a href="#">International transportation</a></p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">2021 © RusWay. All rights reserved.</div>
+                <div class="footer__development">
+                    <div class="footer__development_text">Website development</div>
+                    <div class="footer__development_icon">
+                        <img src="./images/logo-space-app.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
+        integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="./js/app.js"></script>
+</body>
+
+</html>
