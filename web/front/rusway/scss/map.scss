@@ -1,0 +1,36 @@
+.map {
+    &__container {
+        position: relative;
+        color: #333333;
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    &__card {
+        left: 18%;
+        top: 130px;
+        max-width: 560px;
+        padding: 40px;
+        position: absolute;
+        background-color: #FFFFFF;
+        border-color: #DDDDDD;
+
+        .icon {
+            color: #DB2F09;
+            margin-right: 15px;
+            width: 30px;
+            height: 30px;
+        }
+
+        &_title {
+            color: #000000;
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        &_contact {
+            font-weight: 500;
+            font-size: 24px;
+        }
+    }
+}

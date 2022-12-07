@@ -1,0 +1,62 @@
+@import "_mixins";
+@import "fonts";
+
+*,
+*::before,
+*::after {
+    font-family: Montserrat;
+    line-height: 1.5;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    position: relative;
+    z-index: 2;
+    background-color: #FFFFFF;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #DB2F09;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-outline {
+    background-color: #FFFFFF;
+    color: #333333;
+    border: solid #DB2F09;
+    border-width: 1px;
+}
+
+img {
+    width: 100%;
+}
+
+[data-mask] {
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    transition: 0.3s background;
+}

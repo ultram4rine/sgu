@@ -1,0 +1,124 @@
+.header {
+    &__container {
+        position: relative;
+        color: #FFFFFF;
+    }
+
+    &__row {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-left: 18%;
+        padding-right: 18%;
+        margin-top: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_button {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            padding: 20px;
+        }
+
+        &_logo {
+            margin-top: 5px;
+        }
+
+        &_location {
+            display: flex;
+
+            &_icon {
+                margin-right: 5px;
+            }
+
+            &_text {
+                font-weight: 400;
+                font-size: 16px;
+            }
+        }
+
+        &_divider {
+            width: 1px;
+            height: 60px;
+            background-color: #EFEFEF;
+        }
+
+        &_text {
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        &_phone {
+            font-weight: 700;
+            font-size: 18px;
+        }
+    }
+
+    &__content {
+        top: 0;
+        left: 0;
+        position: absolute;
+
+        padding-left: 18%;
+        padding-right: 18%;
+
+        &_title {
+            margin-top: 142px;
+            font-weight: 700;
+            font-size: 48px;
+        }
+
+        &_subtitle {
+            margin-top: 24px;
+            font-weight: 400;
+            font-size: 24px;
+        }
+
+        &_button {
+            margin-top: 40px;
+            padding: 20px 90px;
+        }
+    }
+
+    &__calc {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+
+        padding-left: 18%;
+        padding-right: 18%;
+
+        margin-bottom: 80px;
+
+        font-weight: 500;
+        font-size: 18px;
+
+        form {
+            display: flex;
+        }
+
+        .input-icon {
+            padding-left: 20px;
+        }
+
+        input,
+        label {
+            display: block;
+        }
+
+        input {
+            padding: 20px 20px 20px 48px;
+        }
+
+        input::placeholder {
+            font-weight: 400;
+            color: #B0B0B0;
+        }
+    }
+}

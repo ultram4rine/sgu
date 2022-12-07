@@ -1,0 +1,105 @@
+.news {
+    &__container {
+        background-color: #FFFFFF;
+    }
+
+    &__content {
+        padding-left: 18%;
+        padding-right: 18%;
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        &_title {
+            font-weight: 700;
+            font-size: 48px;
+        }
+
+        &_button_wrapper {
+            width: 100%;
+            text-align: center;
+        }
+
+        &_button {
+            padding: 15px 27px;
+            margin-top: 30px;
+            max-width: 180px;
+        }
+    }
+
+    &__row {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width:1200px) {
+        &__row {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__card {
+        margin-top: 60px;
+        padding: 30px;
+
+        border: solid #DDDDDD;
+        border-width: 1px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        background-color: #FFFFFF;
+        color: #333333;
+
+        font-weight: 400;
+        font-size: 16px;
+
+        &_title {
+            font-weight: 700;
+            font-size: 24px;
+            color: #333333;
+        }
+
+        &_subtitle {
+            margin-top: 8px;
+            color: #B0B0B0;
+        }
+
+        &_image {
+            margin-top: 15px;
+        }
+
+        &_body {
+            margin-top: 16px;
+        }
+
+        &_actions {
+            margin-top: 70px;
+        }
+
+        &_button {
+            float: left;
+            width: 50%;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        &_share_wrapper {
+            display: flex;
+            float: right;
+            color: #DB2F09;
+            padding-top: 19px;
+        }
+
+        &_share {
+            padding-right: 4px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        &_share_icon {
+            padding-left: 4px;
+        }
+    }
+}
