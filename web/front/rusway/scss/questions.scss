@@ -3,6 +3,7 @@
         position: relative;
         color: #FFFFFF;
         font-weight: 700;
+        height: 525px;
     }
 
     &__content {
@@ -14,10 +15,6 @@
         padding-right: 18%;
         padding-top: 40px;
         padding-bottom: 40px;
-
-        &_title {
-            font-size: 40px;
-        }
     }
 
     @media (max-width:1200px) {

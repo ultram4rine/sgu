@@ -17,7 +17,6 @@
 <body>
     <header class="header">
         <div class="header__container">
-            <img src="./images/background-header.png" alt="">
             <div class="header__row">
                 <div class="header__row_button btn">
                     <img src="./images/icon-menu.svg" alt="">
@@ -30,48 +29,81 @@
                     <div class="header__row_location_text">Moscow</i></div>
                 </div>
                 <div class="header__row_divider"></div>
-                <div class="header__row_text">Calculator</div>
-                <div class="header__row_text">Leave entry</div>
-                <div class="header__row_text">Contacts</div>
+                <a href="#calculator">
+                    <div class="header__row_text">Calculator</div>
+                </a>
+                <a href="#">
+                    <div class="header__row_text">Leave entry</div>
+                </a>
+                <a href="#contacts">
+                    <div class="header__row_text">Contacts</div>
+                </a>
                 <div class="header__row_divider"></div>
                 <div class="header__row_phone">+7 (499) 685-16-80</div>
-            </div>
-            <div class="header__content">
-                <div class="header__content_title">You can be sure your cargo will arrive on time</div>
-                <div class="header__content_subtitle">RusWay acts as a guarantor of reliability and professionalism!
-                </div>
-                <div class="header__content_button btn">Order a call</div>
-            </div>
-            <div class="header__calc">
-                <form>
-                    <div>
-                        <label for="from">From?</label>
-                        <i class="fa-solid fa-location-dot input-icon" style="color: #005CCE;"></i>
-                        <input type="text" placeholder="Moscow" name="from" autocomplete="off" />
-                    </div>
-                    <div>
-                        <label for="to">To?</label>
-                        <i class="fa-solid fa-location-dot input-icon" style="color: #DB2F09;"></i>
-                        <input type="text" placeholder="Saratov" name="to" autocomplete="off" />
-                    </div>
-                    <div>
-                        <label for="weight">Weight</label>
-                        <div style="display: flex;">
-                            <i class="fa-solid fa-weight-hanging input-icon" style="color: #B0B0B0;"></i>
-                            <p class="header__calc_measure">kg</p>
-                        </div>
-                        <input type="text" placeholder="0" name="weight" autocomplete="off" />
-                    </div>
-                </form>
             </div>
         </div>
     </header>
 
     <main>
+        <section class="aboutus">
+            <div class="aboutus__container">
+                <img src="./images/background-header.png" class="background" alt="">
+                <div class="aboutus__content">
+                    <h1 id="aboutus" class="aboutus__content_title h1-title">You can be sure your cargo will arrive on
+                        time
+                    </h1>
+                    <div class="aboutus__content_subtitle">RusWay acts as a guarantor of reliability and
+                        professionalism!
+                    </div>
+                    <div class="aboutus__content_button btn">Order a call</div>
+                </div>
+                <div id="calculator" class="aboutus__calc">
+                    <form onsubmit="return false">
+                        <div style="display: flex;">
+                            <div>
+                                <label for="from">From?</label>
+                                <span class="aboutus__calc_input">
+                                    <span class="aboutus__calc_input_prepend">
+                                        <i class="fa-solid fa-location-dot input-icon" style="color: #005CCE;"></i>
+                                    </span>
+                                    <input type="text" placeholder="Moscow" name="from" autocomplete="off" />
+                                </span>
+                            </div>
+                            <div class="aboutus__calc_arrows_rl_wrapper">
+                                <div class="aboutus__calc_arrows_rl">
+                                    <i class="fa-solid fa-right-left"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="to">To?</label>
+                                <span class="aboutus__calc_input">
+                                    <span class="aboutus__calc_input_prepend">
+                                        <i class="fa-solid fa-location-dot input-icon" style="color: #DB2F09;"></i>
+                                    </span>
+                                    <input type="text" placeholder="Saratov" name="to" autocomplete="off" />
+                                </span>
+                            </div>
+                            <div>
+                                <label for="weight">Weight</label>
+                                <span class="aboutus__calc_input">
+                                    <span class="aboutus__calc_input_prepend">
+                                        <i class="fa-solid fa-weight-hanging input-icon" style="color: #B0B0B0;"></i>
+                                    </span>
+                                    <input type="text" placeholder="0" name="weight" autocomplete="off" />
+                                    <span class="aboutus__calc_input_append">kg</span>
+                                </span>
+                            </div>
+                        </div>
+                        <button type="submit" class="aboutus__calc_button btn">Calculate</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <section class="transportation">
             <div class="transportation__container">
                 <div class="transportation__content">
-                    <div class="transportation__content_title">Types of transportation</div>
+                    <h1 id="transportation" class="transportation__content_title h2-title">Types of transportation</h1>
                     <div class="transportation__row">
                         <div class="transportation__card">
                             <div class="transportation__card_title">Road transport</div>
@@ -105,9 +137,9 @@
 
         <section class="numbers">
             <div class="numbers__container">
-                <img src="./images/background-about-us.png" alt="">
+                <img src="./images/background-about-us.png" class="background" alt="">
                 <div class="numbers__content">
-                    <div class="numbers__content_title">About us as numbers</div>
+                    <h1 id="numbers" class="numbers__content_title h2-title">About us as numbers</h1>
                     <div class="numbers__row">
                         <div class="numbers__item">
                             <div class="numbers__item_title">6</div>
@@ -135,7 +167,7 @@
         <section class="advantages">
             <div class="advantages__container">
                 <div class="advantages__content">
-                    <div class="advantages__content_title">Our advantages</div>
+                    <h1 id="advantages" class="advantages__content_title h1-title">Our advantages</h1>
                     <div class="advantages__row">
                         <div class="advantages__item">
                             <div class="advantages__item_icon">
@@ -170,7 +202,7 @@
 
         <section class="industries">
             <div class="industries__container">
-                <div class="industries__grid">
+                <div id="industries" class="industries__grid">
                     <div class="industries__item">
                         <div class="industries__item_name">Industries</div>
                     </div>
@@ -308,7 +340,7 @@
         <section class="news">
             <div class="news__container">
                 <div class="news__content">
-                    <div class="news__content_title">News</div>
+                    <h1 id="news" class="news__content_title h1-title">News</h1>
                     <div class="news__row">
                         <div class="news__card">
                             <div class="news__card_title">Lorem ipsum</div>
@@ -322,10 +354,10 @@
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             </div>
                             <div class="news__card_actions">
-                                <a href="#">
+                                <a href="#news">
                                     <div class="news__card_button btn btn-outline">Read</div>
                                 </a>
-                                <a href="#">
+                                <a href="#news">
                                     <div class="news__card_share_wrapper">
                                         <div class="news__card_share">Share</div>
                                         <div class="news__card_share_icon">
@@ -347,10 +379,10 @@
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             </div>
                             <div class="news__card_actions">
-                                <a href="#">
+                                <a href="#news">
                                     <div class="news__card_button btn btn-outline">Read</div>
                                 </a>
-                                <a href="#">
+                                <a href="#news">
                                     <div class="news__card_share_wrapper">
                                         <div class="news__card_share">Share</div>
                                         <div class="news__card_share_icon">
@@ -372,10 +404,10 @@
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             </div>
                             <div class="news__card_actions">
-                                <a href="#">
+                                <a href="#news">
                                     <div class="news__card_button btn btn-outline">Read</div>
                                 </a>
-                                <a href="#">
+                                <a href="#news">
                                     <div class="news__card_share_wrapper">
                                         <div class="news__card_share">Share</div>
                                         <div class="news__card_share_icon">
@@ -387,7 +419,7 @@
                         </div>
                     </div>
                     <div class="news__content_button_wrapper">
-                        <a href="#">
+                        <a href="#news">
                             <div class="news__content_button btn">View all News</div>
                         </a>
                     </div>
@@ -397,9 +429,9 @@
 
         <section class="questions">
             <div class="questions__container">
-                <img src="./images/background-questions.png" alt="">
+                <img src="./images/background-questions.png" class="background" alt="">
                 <div class="questions__content">
-                    <div class="questions__content_title">Got Questions?</div>
+                    <h1 id="questions" class="questions__content_title h1-title">Got Questions?</h1>
                     <div class="questions__row">
                         <div class="questions__item">
                             <div class="questions__item_text">Contact us</div>
@@ -419,8 +451,10 @@
                         <div class="questions__item">
                             <div class="questions__item_text">Or fill out the form and we will call you back</div>
                             <form onsubmit="return false" class="questions__item_form">
-                                <input type="text" class="questions__item_form_name" placeholder="Name" />
-                                <input type="tel" class="questions__item_form_phone" placeholder="Phone" />
+                                <input type="text" class="questions__item_form_name" placeholder="Name"
+                                    autocomplete="off" />
+                                <input type="tel" class="questions__item_form_phone" placeholder="Phone"
+                                    autocomplete="off" />
                                 <button type="submit" class="questions__item_form_button btn">Leave a
                                     request</button>
                                 <div class="questions__item_form_agreement">By clicking on the button, you consent
@@ -435,7 +469,7 @@
         <section class=" reviews">
             <div class="reviews__container">
                 <div class="reviews__content">
-                    <div class="reviews__content_title">Reviews</div>
+                    <h1 id="reviews" class="reviews__content_title h1-title">Reviews</h1>
                     <div class="reviews__row swiper">
                         <div class="reviews__row_wrapper swiper-wrapper">
                             <div class="reviews__card swiper-slide">
@@ -537,10 +571,10 @@
                             </div>
                         </div>
                         <div class="reviews__content_buttons_wrapper">
-                            <a href="#">
+                            <a href="#reviews">
                                 <div class="reviews__content_button btn">All reviews</div>
                             </a>
-                            <a href="#">
+                            <a href="#reviews">
                                 <div class="reviews__content_button btn btn-outline">Leave a
                                     review</div>
                             </a>
@@ -552,9 +586,9 @@
 
         <section class="map">
             <div class="map__container">
-                <img src="./images/map.png" alt="">
+                <img src="./images/map.png" class="background" alt="">
                 <div class="map__card">
-                    <div class="map__card_title">Contacts</div>
+                    <h1 id="contacts" class="map__card_title h2-title">Contacts</h1>
                     <p class="map__card_contact"><i class="icon fa-solid fa-phone"></i>+7 (499) 685-16-80</p>
                     <p class="map__card_contact"><i class="icon fa-regular fa-envelope"></i>fizeisoumoi-6343@yopmail.com
                     </p>
@@ -579,14 +613,14 @@
                 </div>
                 <div class="footer__col">
                     <p class="footer__col_title">Company</p>
-                    <p class="footer__col_item"><a href="#">About us</a></p>
-                    <p class="footer__col_item"><a href="#">Types of transportation</a></p>
-                    <p class="footer__col_item"><a href="#">Industries</a></p>
-                    <p class="footer__col_item"><a href="#">Our advantages</a></p>
-                    <p class="footer__col_item"><a href="#">reviews</a></p>
-                    <p class="footer__col_item"><a href="#">Got questions?</a></p>
-                    <p class="footer__col_item"><a href="#">Contacts</a></p>
-                    <p class="footer__col_item"><a href="#">Reviews</a></p>
+                    <p class="footer__col_item"><a href="#aboutus">About us</a></p>
+                    <p class="footer__col_item"><a href="#transportation">Types of transportation</a></p>
+                    <p class="footer__col_item"><a href="#industries">Industries</a></p>
+                    <p class="footer__col_item"><a href="#advantages">Our advantages</a></p>
+                    <p class="footer__col_item"><a href="#news">News</a></p>
+                    <p class="footer__col_item"><a href="#questions">Got questions?</a></p>
+                    <p class="footer__col_item"><a href="#contacts">Contacts</a></p>
+                    <p class="footer__col_item"><a href="#reviews">Reviews</a></p>
                 </div>
                 <div class="footer__col">
                     <p class="footer__col_title">Services</h3>

@@ -1,0 +1,131 @@
+.aboutus {
+    &__container {
+        position: relative;
+        color: #FFFFFF;
+        height: 750px;
+        margin-top: -60px;
+        z-index: 1;
+    }
+
+    &__content {
+        top: 0;
+        left: 0;
+        position: absolute;
+
+        padding-left: 18%;
+        padding-right: 18%;
+
+        &_title {
+            margin-top: 142px;
+        }
+
+        &_subtitle {
+            margin-top: 24px;
+            font-weight: 400;
+            font-size: 24px;
+        }
+
+        &_button {
+            margin-top: 40px;
+            padding: 20px 90px;
+        }
+    }
+
+    &__calc {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+
+        padding-left: 18%;
+        padding-right: 18%;
+
+        margin-bottom: 80px;
+
+        font-weight: 500;
+        font-size: 18px;
+
+        form {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .input-icon {
+            position: absolute;
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+
+        &_arrows_rl_wrapper {
+            padding: 10px 30px;
+            border: solid #EFEFEF;
+            border-width: 0 1px;
+            background-color: #FFFFFF;
+            height: 60px;
+            align-self: end;
+        }
+
+        &_arrows_rl {
+            background-color: #E5E5E5;
+            color: #333333;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            align-items: center;
+            cursor: pointer;
+            padding-top: 7px;
+        }
+
+        &_input {
+            display: flex;
+        }
+
+        &_input_prepend,
+        &_input_append {
+            flex-grow: 0;
+            background-color: #FFFFFF;
+        }
+
+        &_input_append {
+            display: flex;
+            color: #333333;
+            cursor: default;
+            align-items: center;
+            padding-right: 25px
+        }
+
+        input,
+        label {
+            display: block;
+        }
+
+        input {
+            padding: 20px 20px 20px 48px;
+            border: none;
+            height: 60px;
+            align-self: end;
+        }
+
+        input[name="weight"] {
+            border: solid #EFEFEF;
+            border-width: 0 0 0 1px;
+        }
+
+        input::placeholder {
+            font-weight: 400;
+            color: #B0B0B0;
+        }
+
+        &_button {
+            display: flex;
+            height: 60px;
+            align-self: end;
+            max-width: 180px;
+            align-items: center;
+            padding: 20px 20px;
+        }
+    }
+}
