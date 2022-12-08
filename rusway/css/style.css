@@ -73,12 +73,31 @@
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 section {
   position: relative;
   z-index: 2;
   background-color: #FFFFFF;
+}
+
+.h1-title {
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.h2-title {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1920px;
 }
 
 a,
@@ -124,6 +143,8 @@ img {
 .header__container {
   position: relative;
   color: #FFFFFF;
+  height: 60px;
+  z-index: 3;
 }
 .header__row {
   width: 100%;
@@ -166,58 +187,119 @@ img {
 .header__row_text {
   font-weight: 500;
   font-size: 18px;
+  color: #FFFFFF;
 }
 .header__row_phone {
   font-weight: 700;
   font-size: 18px;
 }
-.header__content {
+
+.aboutus__container {
+  position: relative;
+  color: #FFFFFF;
+  height: 750px;
+  margin-top: -60px;
+  z-index: 1;
+}
+.aboutus__content {
   top: 0;
   left: 0;
   position: absolute;
   padding-left: 18%;
   padding-right: 18%;
 }
-.header__content_title {
+.aboutus__content_title {
   margin-top: 142px;
-  font-weight: 700;
-  font-size: 48px;
 }
-.header__content_subtitle {
+.aboutus__content_subtitle {
   margin-top: 24px;
   font-weight: 400;
   font-size: 24px;
 }
-.header__content_button {
+.aboutus__content_button {
   margin-top: 40px;
   padding: 20px 90px;
 }
-.header__calc {
+.aboutus__calc {
   bottom: 0;
   left: 0;
   position: absolute;
+  width: 100%;
   padding-left: 18%;
   padding-right: 18%;
   margin-bottom: 80px;
   font-weight: 500;
   font-size: 18px;
 }
-.header__calc form {
+.aboutus__calc form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.aboutus__calc .input-icon {
+  position: absolute;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.aboutus__calc_arrows_rl_wrapper {
+  padding: 10px 30px;
+  border: solid #EFEFEF;
+  border-width: 0 1px;
+  background-color: #FFFFFF;
+  height: 60px;
+  align-self: end;
+}
+.aboutus__calc_arrows_rl {
+  background-color: #E5E5E5;
+  color: #333333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding-top: 7px;
+}
+.aboutus__calc_input {
   display: flex;
 }
-.header__calc .input-icon {
-  padding-left: 20px;
+.aboutus__calc_input_prepend, .aboutus__calc_input_append {
+  flex-grow: 0;
+  background-color: #FFFFFF;
 }
-.header__calc input,
-.header__calc label {
+.aboutus__calc_input_append {
+  display: flex;
+  color: #333333;
+  cursor: default;
+  align-items: center;
+  padding-right: 25px;
+}
+.aboutus__calc input,
+.aboutus__calc label {
   display: block;
 }
-.header__calc input {
+.aboutus__calc input {
   padding: 20px 20px 20px 48px;
+  border: none;
+  height: 60px;
+  align-self: end;
 }
-.header__calc input::placeholder {
+.aboutus__calc input[name=weight] {
+  border: solid #EFEFEF;
+  border-width: 0 0 0 1px;
+}
+.aboutus__calc input::placeholder {
   font-weight: 400;
   color: #B0B0B0;
+}
+.aboutus__calc_button {
+  display: flex;
+  height: 60px;
+  align-self: end;
+  max-width: 180px;
+  align-items: center;
+  padding: 20px 20px;
 }
 
 .transportation__container {
@@ -228,10 +310,6 @@ img {
   padding-right: 18%;
   padding-top: 80px;
   padding-bottom: 80px;
-}
-.transportation__content_title {
-  font-weight: 700;
-  font-size: 40px;
 }
 .transportation__row {
   display: grid;
@@ -280,6 +358,7 @@ img {
   position: relative;
   color: #FFFFFF;
   font-weight: 700;
+  height: 429px;
 }
 .numbers__content {
   top: 0;
@@ -289,9 +368,6 @@ img {
   padding-right: 18%;
   padding-top: 40px;
   padding-bottom: 40px;
-}
-.numbers__content_title {
-  font-size: 40px;
 }
 @media (max-width: 1200px) {
   .numbers__content {
@@ -351,8 +427,6 @@ img {
 }
 .advantages__content_title {
   color: #000000;
-  font-weight: 700;
-  font-size: 48px;
 }
 .advantages__row {
   display: grid;
@@ -444,10 +518,6 @@ img {
   padding-top: 80px;
   padding-bottom: 80px;
 }
-.news__content_title {
-  font-weight: 700;
-  font-size: 48px;
-}
 .news__content_button_wrapper {
   width: 100%;
   text-align: center;
@@ -524,6 +594,7 @@ img {
   position: relative;
   color: #FFFFFF;
   font-weight: 700;
+  height: 525px;
 }
 .questions__content {
   top: 0;
@@ -533,9 +604,6 @@ img {
   padding-right: 18%;
   padding-top: 40px;
   padding-bottom: 40px;
-}
-.questions__content_title {
-  font-size: 40px;
 }
 @media (max-width: 1200px) {
   .questions__content {
@@ -663,10 +731,6 @@ img {
   padding-top: 80px;
   padding-bottom: 80px;
 }
-.reviews__content_title {
-  font-weight: 700;
-  font-size: 48px;
-}
 .reviews__content_arrows_wrapper {
   margin-top: 30px;
 }
@@ -771,6 +835,7 @@ img {
   color: #333333;
   font-weight: 400;
   font-size: 18px;
+  height: 650px;
 }
 .map__card {
   left: 18%;
@@ -789,8 +854,6 @@ img {
 }
 .map__card_title {
   color: #000000;
-  font-weight: 700;
-  font-size: 40px;
 }
 .map__card_contact {
   font-weight: 500;
