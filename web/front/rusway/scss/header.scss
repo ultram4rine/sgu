@@ -26,10 +26,24 @@
             width: 60px;
             height: 60px;
             padding: 20px;
+
+            img {
+                width: 20px;
+            }
+
+            @include for-portrait-phones-down {
+                width: 40px;
+                height: 40px;
+                padding: 10px;
+            }
         }
 
         &_logo {
             margin-top: 5px;
+
+            @include for-tablets-down {
+                display: none;
+            }
         }
 
         &_location {
@@ -43,23 +57,51 @@
                 font-weight: 400;
                 font-size: 16px;
             }
+
+            @include for-tablets-down {
+                display: none;
+            }
         }
 
         &_divider {
             width: 1px;
             height: 60px;
             background-color: #EFEFEF;
+
+            @include for-tablets-down {
+                display: none;
+            }
         }
 
         &_text {
             font-weight: 500;
             font-size: 18px;
             color: #FFFFFF;
+
+            @include for-large-desktops-down {
+                font-size: 14px;
+            }
+
+            @include for-tablets-down {
+                font-size: 18px;
+            }
+
+            @include for-portrait-phones-down {
+                font-size: 12px;
+            }
         }
 
         &_phone {
             font-weight: 700;
             font-size: 18px;
+
+            @include for-large-desktops-down {
+                font-size: 16px;
+            }
+
+            @include for-desktops-down {
+                display: none;
+            }
         }
     }
 }
