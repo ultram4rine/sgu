@@ -18,6 +18,10 @@
         @include for-desktops-down {
             grid-template-columns: repeat(2, 1fr);
         }
+
+        @include for-portrait-phones-down {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__card {
