@@ -73,13 +73,16 @@
 body {
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
 }
 
 section {
   position: relative;
   z-index: 2;
   background-color: #FFFFFF;
+}
+
+.container {
+  overflow-x: hidden;
 }
 
 .h1-title {
@@ -186,8 +189,23 @@ img {
   height: 60px;
   padding: 20px;
 }
+.header__row_button img {
+  width: 20px;
+}
+@media (max-width: 576px) {
+  .header__row_button {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+}
 .header__row_logo {
   margin-top: 5px;
+}
+@media (max-width: 992px) {
+  .header__row_logo {
+    display: none;
+  }
 }
 .header__row_location {
   display: flex;
@@ -199,19 +217,54 @@ img {
   font-weight: 400;
   font-size: 16px;
 }
+@media (max-width: 992px) {
+  .header__row_location {
+    display: none;
+  }
+}
 .header__row_divider {
   width: 1px;
   height: 60px;
   background-color: #EFEFEF;
+}
+@media (max-width: 992px) {
+  .header__row_divider {
+    display: none;
+  }
 }
 .header__row_text {
   font-weight: 500;
   font-size: 18px;
   color: #FFFFFF;
 }
+@media (max-width: 1400px) {
+  .header__row_text {
+    font-size: 14px;
+  }
+}
+@media (max-width: 992px) {
+  .header__row_text {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .header__row_text {
+    font-size: 12px;
+  }
+}
 .header__row_phone {
   font-weight: 700;
   font-size: 18px;
+}
+@media (max-width: 1400px) {
+  .header__row_phone {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1200px) {
+  .header__row_phone {
+    display: none;
+  }
 }
 
 .aboutus__container {
@@ -930,11 +983,30 @@ img {
   background-color: #FFFFFF;
   border-color: #DDDDDD;
 }
+@media (max-width: 992px) {
+  .map__card {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 .map__card .icon {
   color: #DB2F09;
   margin-right: 15px;
   width: 30px;
   height: 30px;
+}
+@media (max-width: 768px) {
+  .map__card .icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media (max-width: 576px) {
+  .map__card .icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 .map__card_title {
   color: #000000;
@@ -942,6 +1014,16 @@ img {
 .map__card_contact {
   font-weight: 500;
   font-size: 24px;
+}
+@media (max-width: 768px) {
+  .map__card_contact {
+    font-size: 22px;
+  }
+}
+@media (max-width: 576px) {
+  .map__card_contact {
+    font-size: 20px;
+  }
 }
 
 .footer {
