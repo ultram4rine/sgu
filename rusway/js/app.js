@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function (_event) {
     // Responsive breakpoints
     breakpoints: {
       // when window width is >= 1360px
-      1360: {
+      1400: {
         slidesPerView: 3,
         spaceBetween: 30,
       },
@@ -19,3 +19,9 @@ document.addEventListener("DOMContentLoaded", function (_event) {
     },
   });
 });
+
+function swapValues() {
+  const tmp = document.getElementById("from").value;
+  document.getElementById("from").value = document.getElementById("to").value;
+  document.getElementById("to").value = tmp;
+}
