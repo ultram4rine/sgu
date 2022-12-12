@@ -17,41 +17,47 @@
         padding-bottom: 40px;
     }
 
-    @media (max-width:1200px) {
-        &__content {
-            top: 0;
-            left: 0;
-
-            position: absolute;
-            padding-left: 18%;
-            padding-right: 18%;
-            padding-top: 10px;
-            padding-bottom: 10px;
-
-            &_title {
-                font-size: 20px;
-            }
-        }
-    }
-
     &__row {
         display: grid;
-        gap: 150px;
+        gap: 50px;
         grid-template-columns: repeat(2, 1fr);
+
+        @include for-desktops-down {
+            gap: 10px;
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__item {
         padding-top: 60px;
         text-align: start;
-        font-size: 24px;
+        font-size: 22px;
+
+        @include for-large-desktops-down {
+            padding-top: 40px;
+        }
+
+        @include for-desktops-down {
+            padding-top: 20px;
+            font-size: 16px;
+        }
 
         &_text {
             font-weight: 400;
+
+            @include for-desktops-down {
+                padding-top: 4px;
+                font-size: 18px;
+            }
         }
 
         &_contact {
             display: flex;
             margin-top: 30px;
+
+            @include for-desktops-down {
+                margin-top: 10px;
+            }
         }
 
         &_contact_icon {
@@ -59,99 +65,76 @@
             height: 30px;
             color: #DB2F09;
             margin-right: 20px;
+
+            @include for-desktops-down {
+                width: auto;
+                height: auto;
+                margin-right: 10px;
+            }
         }
 
         &_contact_text {
             font-weight: 700;
             font-size: 24px;
+
+            @include for-large-desktops-down {
+                &_contact_text {
+                    font-size: 22px;
+                }
+            }
+
+            @include for-desktops-down {
+                font-size: 12px;
+            }
         }
 
         &_form {
             margin-top: 30px;
             display: grid;
-            gap: 30px;
+            gap: 15px;
             grid-template-columns: repeat(2, 1fr);
 
+            @include for-desktops-down {
+                margin-top: 20px;
+            }
+
             input {
-                width: 245px;
-                padding: 20px
+                width: 95%;
+                padding: 20px;
+
+                @include for-desktops-down {
+                    padding: 10px
+                }
             }
 
             input::placeholder {
                 font-weight: 500;
                 font-size: 18px;
                 color: #B0B0B0;
+
+                @include for-desktops-down {
+                    font-size: 12px;
+                }
             }
 
             &_button {
-                width: 245px;
+                width: 95%;
+                font-size: 14px;
                 padding: 20px;
+
+                @include for-desktops-down {
+                    font-size: 12px;
+                    padding: 10px;
+                }
             }
 
             &_agreement {
                 font-weight: 400;
                 font-size: 11px;
                 color: #B0B0B0;
-            }
-        }
-    }
 
-    @media (max-width:1200px) {
-        &__item {
-            padding-top: 20px;
-            text-align: start;
-            font-size: 16px;
-
-            &_text {
-                padding-top: 4px;
-                font-weight: 400;
-                font-size: 18px;
-            }
-
-            &_contact {
-                display: flex;
-                margin-top: 10px;
-            }
-
-            &_contact_icon {
-                width: auto;
-                height: auto;
-                color: #DB2F09;
-                margin-right: 10px;
-            }
-
-            &_contact_text {
-                font-weight: 700;
-                font-size: 12px;
-            }
-
-            &_form {
-                margin-top: 20px;
-                display: grid;
-                gap: 15px;
-                grid-template-columns: repeat(2, 1fr);
-
-                input {
-                    width: 245px;
-                    padding: 10px
-                }
-
-                input::placeholder {
-                    font-weight: 500;
-                    font-size: 12px;
-                    color: #B0B0B0;
-                }
-
-                &_button {
-                    width: 245px;
-                    font-size: 12px;
-                    padding: 10px;
-                }
-
-                &_agreement {
-                    font-weight: 400;
+                @include for-desktops-down {
                     font-size: 8px;
-                    color: #B0B0B0;
                 }
             }
         }

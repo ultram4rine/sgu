@@ -59,31 +59,34 @@
                 </div>
                 <div id="calculator" class="aboutus__calc">
                     <form onsubmit="return false">
-                        <div style="display: flex;">
-                            <div>
-                                <label for="from">From?</label>
-                                <span class="aboutus__calc_input">
-                                    <span class="aboutus__calc_input_prepend">
-                                        <i class="fa-solid fa-location-dot input-icon" style="color: #005CCE;"></i>
+                        <div class="aboutus__calc_inputs_wrapper">
+                            <div class="aboutus__calc_inputs_cities_wrapper">
+                                <div class="aboutus__calc_input_wrapper">
+                                    <label for="from">From?</label>
+                                    <span class="aboutus__calc_input">
+                                        <span class="aboutus__calc_input_prepend">
+                                            <i class="fa-solid fa-location-dot input-icon" style="color: #005CCE;"></i>
+                                        </span>
+                                        <input type="text" placeholder="Moscow" id="from" name="from"
+                                            autocomplete="off" />
                                     </span>
-                                    <input type="text" placeholder="Moscow" name="from" autocomplete="off" />
-                                </span>
-                            </div>
-                            <div class="aboutus__calc_arrows_rl_wrapper">
-                                <div class="aboutus__calc_arrows_rl">
-                                    <i class="fa-solid fa-right-left"></i>
+                                </div>
+                                <div class="aboutus__calc_arrows_rl_wrapper">
+                                    <div class="aboutus__calc_arrows_rl">
+                                        <i class="fa-solid fa-right-left" id="swap" onclick="swapValues()"></i>
+                                    </div>
+                                </div>
+                                <div class="aboutus__calc_input_wrapper">
+                                    <label for="to">To?</label>
+                                    <span class="aboutus__calc_input">
+                                        <span class="aboutus__calc_input_prepend">
+                                            <i class="fa-solid fa-location-dot input-icon" style="color: #DB2F09;"></i>
+                                        </span>
+                                        <input type="text" placeholder="Saratov" id="to" name="to" autocomplete="off" />
+                                    </span>
                                 </div>
                             </div>
-                            <div>
-                                <label for="to">To?</label>
-                                <span class="aboutus__calc_input">
-                                    <span class="aboutus__calc_input_prepend">
-                                        <i class="fa-solid fa-location-dot input-icon" style="color: #DB2F09;"></i>
-                                    </span>
-                                    <input type="text" placeholder="Saratov" name="to" autocomplete="off" />
-                                </span>
-                            </div>
-                            <div>
+                            <div class="aboutus__calc_input_wrapper">
                                 <label for="weight">Weight</label>
                                 <span class="aboutus__calc_input">
                                     <span class="aboutus__calc_input_prepend">

@@ -25,12 +25,29 @@ section {
 .h1-title {
     font-weight: 700;
     font-size: 48px;
+
+    @include for-landscape-phones-down {
+        font-size: 38px;
+    }
+
+    @include for-portrait-phones-down {
+        font-size: 33px;
+    }
 }
 
 .h2-title {
     font-weight: 700;
     font-size: 40px;
+
+    @include for-landscape-phones-down {
+        font-size: 30px;
+    }
+
+    @include for-portrait-phones-down {
+        font-size: 25px;
+    }
 }
+
 
 .background {
     position: absolute;

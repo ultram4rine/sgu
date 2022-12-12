@@ -5,18 +5,18 @@
         font-size: 20px;
         text-align: center;
         background-color: #B0B0B0;
+
+        @include for-portrait-phones-down {
+            font-size: 16px;
+        }
     }
 
     &__grid {
         display: grid;
         gap: 1px;
         grid-template-columns: repeat(4, 1fr);
-    }
 
-    @media (max-width:1200px) {
-        &__grid {
-            display: grid;
-            gap: 1px;
+        @include for-desktops-down {
             grid-template-columns: repeat(2, 1fr);
         }
     }

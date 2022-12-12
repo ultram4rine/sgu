@@ -14,12 +14,8 @@
         display: grid;
         gap: 30px;
         grid-template-columns: repeat(4, 1fr);
-    }
 
-    @media (max-width:1200px) {
-        &__row {
-            display: grid;
-            gap: 30px;
+        @include for-desktops-down {
             grid-template-columns: repeat(2, 1fr);
         }
     }
