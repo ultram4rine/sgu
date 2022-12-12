@@ -13,13 +13,16 @@
 body {
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
 }
 
 section {
     position: relative;
     z-index: 2;
     background-color: #FFFFFF;
+}
+
+.container {
+    overflow-x: hidden;
 }
 
 .h1-title {
@@ -47,7 +50,6 @@ section {
         font-size: 25px;
     }
 }
-
 
 .background {
     position: absolute;
