@@ -16,11 +16,27 @@
         background-color: #FFFFFF;
         border-color: #DDDDDD;
 
+        @include for-tablets-down {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         .icon {
             color: #DB2F09;
             margin-right: 15px;
             width: 30px;
             height: 30px;
+
+            @include for-landscape-phones-down {
+                width: 25px;
+                height: 25px;
+            }
+
+            @include for-portrait-phones-down {
+                width: 20px;
+                height: 20px;
+            }
         }
 
         &_title {
@@ -30,6 +46,14 @@
         &_contact {
             font-weight: 500;
             font-size: 24px;
+
+            @include for-landscape-phones-down {
+                font-size: 22px;
+            }
+
+            @include for-portrait-phones-down {
+                font-size: 20px;
+            }
         }
     }
 }
