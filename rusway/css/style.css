@@ -291,6 +291,16 @@ img {
     margin-top: 122px;
   }
 }
+@media (max-width: 768px) {
+  .aboutus__content_title {
+    font-size: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .aboutus__content_title {
+    margin-top: 102px;
+  }
+}
 .aboutus__content_subtitle {
   margin-top: 24px;
   margin-bottom: 0px;
@@ -316,7 +326,7 @@ img {
 @media (max-width: 576px) {
   .aboutus__content_button {
     width: 100%;
-    padding: 20px 60px;
+    padding: 20px 0;
   }
 }
 .aboutus__calc {
@@ -329,6 +339,12 @@ img {
   margin-bottom: 80px;
   font-weight: 500;
   font-size: 18px;
+}
+@media (max-width: 576px) {
+  .aboutus__calc {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 .aboutus__calc form {
   display: flex;
@@ -457,6 +473,11 @@ img {
 @media (max-width: 1200px) {
   .transportation__row {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .transportation__row {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 .transportation__card {
@@ -733,10 +754,12 @@ img {
   top: 0;
   left: 0;
   position: absolute;
-  padding-left: 18%;
-  padding-right: 18%;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px 18%;
+}
+@media (max-width: 576px) {
+  .questions__content {
+    padding: 0 18%;
+  }
 }
 .questions__row {
   display: grid;
@@ -763,6 +786,11 @@ img {
   .questions__item {
     padding-top: 20px;
     font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .questions__item {
+    padding-top: 10px;
   }
 }
 .questions__item_text {
