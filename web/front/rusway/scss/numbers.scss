@@ -11,16 +11,22 @@
         left: 0;
 
         position: absolute;
-        padding-left: 18%;
-        padding-right: 18%;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding: 40px 18%;
+
+        @include for-portrait-phones-down {
+            padding: 10px 18%;
+        }
     }
 
     &__row {
         display: grid;
         gap: 30px;
         grid-template-columns: repeat(4, 1fr);
+
+        @include for-portrait-phones-down {
+            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__item {
@@ -32,7 +38,7 @@
         }
 
         @include for-portrait-phones-down {
-            padding-top: 30px;
+            padding-top: 10px;
         }
 
         &_title {

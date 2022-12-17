@@ -7,7 +7,7 @@
         background-color: #B0B0B0;
 
         @include for-portrait-phones-down {
-            font-size: 16px;
+            font-size: 14px;
         }
     }
 
@@ -37,11 +37,19 @@
             height: 60px;
             z-index: 2;
 
+            @include for-portrait-phones-down {
+                height: 40px;
+            }
+
             &_svg {
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
                 height: 60px;
+
+                @include for-portrait-phones-down {
+                    height: 40px;
+                }
             }
         }
 
