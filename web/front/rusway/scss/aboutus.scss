@@ -23,6 +23,14 @@
                 font-size: 33px;
                 margin-top: 122px;
             }
+
+            @include for-landscape-phones-down {
+                font-size: 30px;
+            }
+
+            @include for-portrait-phones-down {
+                margin-top: 102px;
+            }
         }
 
         &_subtitle {
@@ -48,7 +56,7 @@
 
             @include for-portrait-phones-down {
                 width: 100%;
-                padding: 20px 60px;
+                padding: 20px 0;
             }
         }
     }
@@ -66,6 +74,11 @@
 
         font-weight: 500;
         font-size: 18px;
+
+        @include for-portrait-phones-down {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
         form {
             display: flex;

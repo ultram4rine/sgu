@@ -11,10 +11,11 @@
         left: 0;
 
         position: absolute;
-        padding-left: 18%;
-        padding-right: 18%;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding: 40px 18%;
+
+        @include for-portrait-phones-down {
+            padding: 0 18%;
+        }
     }
 
     &__row {
@@ -40,6 +41,10 @@
         @include for-desktops-down {
             padding-top: 20px;
             font-size: 16px;
+        }
+
+        @include for-portrait-phones-down {
+            padding-top: 10px;
         }
 
         &_text {
