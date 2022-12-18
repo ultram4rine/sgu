@@ -7,14 +7,23 @@ import java.sql.Statement;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+* Class Sale represents a sale in pawnshop.
+*/
 public class Sale {
     private int id;
     private Jewelry jewelry;
     private Customer customer;
 
+    /** 
+    * Class constructor.
+    */
     public Sale() {
     }
 
+    /** 
+    * Class constructor with parameters.
+    */
     public Sale(int id, Jewelry jewelry, Customer customer) {
         setId(id);
         setJewelry(jewelry);
@@ -45,10 +54,18 @@ public class Sale {
         return customer;
     }
 
+    /**
+    * toJSON makes JSON string from Sale instance.
+    */
     public String toJSON() throws JsonProcessingException {
         return new ObjectMapper().writeValueAsString(this);
     }
 
+    /**
+    * saveToDB saves Sale instance to DB using connection.
+    * 
+    * @param connection connection to DB.
+    */
     public void saveToDB(Connection connection) {
         try {
             Statement statement = connection.createStatement();

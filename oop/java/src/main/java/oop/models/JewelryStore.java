@@ -14,6 +14,9 @@ import java.util.List;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+* Class JewelryStore represents a jewelry store.
+*/
 public class JewelryStore {
     private List<Jewelry> jewelries;
     private List<Customer> customers;
@@ -21,15 +24,24 @@ public class JewelryStore {
 
     private ObjectMapper mapper = new ObjectMapper();
 
+    /** 
+    * Class constructor.
+    */
     public JewelryStore() {
     }
 
+    /** 
+    * Class constructor with parameters.
+    */
     public JewelryStore(List<Jewelry> jewelries, List<Customer> customers, List<Sale> sales) {
         setJewelries(jewelries);
         setCustomers(customers);
         setSales(sales);
     }
 
+    /** 
+    * Class constructor from JSON file.
+    */
     public JewelryStore(String fileName) throws IOException {
         String json = Files.readString(Paths.get(fileName));
         JewelryStore store = new JewelryStore();
@@ -92,10 +104,18 @@ public class JewelryStore {
         sales.remove(sale);
     }
 
+    /**
+    * toJSON makes JSON string from Jewelry store instance.
+    */
     private String toJSON() throws JsonProcessingException {
         return mapper.writeValueAsString(this);
     }
 
+    /**
+    * writeJSON writes Jewelry store as JSON to filename param.
+    *
+    * @param filename name of file.
+    */
     public void writeJSON(String fileName) throws IOException {
         try {
             String json = toJSON();
@@ -106,12 +126,22 @@ public class JewelryStore {
         }
     }
 
+    /**
+    * writeJewelriesToDB writes jewelries of store to DB using connection
+    *
+    * @param connection connection to DB.
+    */
     public void writeJewelriesToDB(Connection connection) {
         for (Jewelry jewelry : jewelries) {
             jewelry.saveToDB(connection);
         }
     }
 
+    /**
+    * readJewelriesToDB reads jewelries of store from DB using connection
+    *
+    * @param connection connection to DB.
+    */
     public void readJewelriesFromDB(Connection connection) {
         try {
             Statement statement = connection.createStatement();
@@ -129,12 +159,22 @@ public class JewelryStore {
         }
     }
 
+    /**
+    * writeCustomersToDB writes customers of store to DB using connection
+    *
+    * @param connection connection to DB.
+    */
     public void writeCustomersToDB(Connection connection) {
         for (Customer customer : customers) {
             customer.saveToDB(connection);
         }
     }
 
+    /**
+    * readCustomersFromDB reads customers of store from DB using connection
+    *
+    * @param connection connection to DB.
+    */
     public void readCustomersFromDB(Connection connection) {
         try {
             Statement statement = connection.createStatement();
@@ -152,12 +192,22 @@ public class JewelryStore {
         }
     }
 
+    /**
+    * writeSalesToDB writes sales of store to DB using connection
+    *
+    * @param connection connection to DB.
+    */
     public void writeSalesToDB(Connection connection) {
         for (Sale sale : sales) {
             sale.saveToDB(connection);
         }
     }
 
+    /**
+    * readSalesFromDB reads sales of store from DB using connection
+    *
+    * @param connection connection to DB.
+    */
     public void readSalesFromDB(Connection connection) {
         try {
             Statement statement = connection.createStatement();

@@ -8,6 +8,9 @@ import java.util.regex.Pattern;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+* Class Customer represents a customer in pawnshop.
+*/
 public class Customer {
     private int id;
     private String name;
@@ -15,11 +18,18 @@ public class Customer {
     private String phone;
     private String address;
 
+    // special regex for phone.
     private Pattern phoneRegex = Pattern.compile("^(\\d{3}[- .]?){2}\\d{4}$");
 
+    /** 
+    * Class constructor.
+    */
     public Customer() {
     }
 
+    /** 
+    * Class constructor with parameters.
+    */
     public Customer(int id, String name, String surname, String phone, String address) {
         setId(id);
         setName(name);
@@ -72,10 +82,18 @@ public class Customer {
         return address;
     }
 
+    /**
+    * toJSON makes JSON string from Customer instance.
+    */
     public String toJSON() throws JsonProcessingException {
         return new ObjectMapper().writeValueAsString(this);
     }
 
+    /**
+    * saveToDB saves Customer instance to DB using connection.
+    * 
+    * @param connection connection to DB.
+    */
     public void saveToDB(Connection connection) {
         try {
             Statement statement = connection.createStatement();
