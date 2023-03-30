@@ -1,3 +1,9 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY,
+    username TEXT NOT NULL,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS countries (
     country TEXT NOT NULL,
     region TEXT NOT NULL
