@@ -27,6 +27,7 @@ func main() {
 	router.HandleFunc("/register", controllers.RegisterController)
 	router.HandleFunc("/login", controllers.LoginController)
 	router.HandleFunc("/logout", controllers.LogoutHandler)
+	router.HandleFunc("/stats", AuthCheck(controllers.StatsController))
 
 	srv := &http.Server{
 		Handler:      router,
@@ -43,7 +44,7 @@ func main() {
 func AuthCheck(handler http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if !helpers.AlreadyLogin(r) {
-			http.Redirect(w, r, "/admin/login", http.StatusFound)
+			http.Redirect(w, r, "/login", http.StatusFound)
 			return
 		}
 

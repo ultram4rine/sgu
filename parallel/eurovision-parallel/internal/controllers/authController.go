@@ -36,12 +36,18 @@ func RegisterController(w http.ResponseWriter, r *http.Request) {
 		}
 	} else if r.Method == "POST" {
 		var userDTO = &dtos.UserDTO{
-			FirstName: r.FormValue("firstname"),
-			LastName:  r.FormValue("lastname"),
+			FirstName: r.FormValue("firstName"),
+			LastName:  r.FormValue("lastName"),
 			Email:     r.FormValue("email"),
 			Password:  r.FormValue("password"),
 		}
-		if err := s.Create(*userDTO.ToUser()); err != nil {
+		user, err := userDTO.ToUser()
+		if err != nil {
+			log.Warnf("Error hashing password: %v", err)
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		if err := s.Create(*user); err != nil {
 			log.Warnf("Error registering user: %v", err)
 			w.WriteHeader(http.StatusInternalServerError)
 			return
